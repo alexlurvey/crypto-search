@@ -1,0 +1,17 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": "> 0.25%",
+      // "forceAllTransforms": true,
+      // "loose": true
+    }],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    ["@babel/transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ]
+}
