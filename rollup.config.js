@@ -24,9 +24,7 @@ export default {
     commonjs({
       include: 'node_modules/**',
       namedExports: {
-        'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer'],
-//        'node_modules/flyd/lib/index.js': [ 'stream', 'scan', 'on', 'combine' ],
-//        'node_modules/@thi.ng/transducers/index.js': [ 'comp' ],
+        'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer']
       }
     }),
     replace({
