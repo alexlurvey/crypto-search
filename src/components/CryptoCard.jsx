@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatPrice } from '../utils';
 
 export const CryptoCard = ({ crypto }) => {
   return (
@@ -13,7 +14,7 @@ export const CryptoCard = ({ crypto }) => {
       </header>
       <div className="card-content">
         <div className="content">
-          <div>{crypto.quote.USD.price}</div>
+          <div>{formatPrice(crypto.quote.USD.price)}</div>
         </div>
       </div>
     </div>
