@@ -15,7 +15,6 @@ body {
 
 /* Filters */
 .filters {
-  margin-right: 10px;
   display: flex;
 }
 
@@ -29,6 +28,10 @@ body {
 
 .filter-search {
   width: 300px;
+}
+
+.filter-checkboxes {
+  margin-top: 5px;
 }
 
 /* Crypto Cards */
@@ -45,6 +48,22 @@ body {
   cursor: pointer;
   margin: auto;
   margin-right: 10px;
+}
+
+.crypto-card-content {
+  display: flex;
+}
+
+.crypto-card-content div {
+  margin: 5px;
+}
+
+.negative-percent-change {
+  color: red;
+}
+
+.positive-percent-change {
+  color: green;
 }
 
 @keyframes fadeIn {
@@ -69,17 +88,53 @@ body {
   animation: fadeOut .5s ease-out;
 }
 
-@media (max-width: 420px) {
-  .app-wrapper {
-    width: 95vw;
+@media (max-width: 662px) and (min-width: 600px) {
+  .filter-checkboxes {
+    font-size: 70%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 70%;
+  }
+
+  .filter-search {
+    width: 100vw;
   }
 
   .filters {
     flex-direction: column;
   }
+}
+
+@media (max-width: 420px) {
+  .app-wrapper {
+    width: 95vw;
+  }
 
   .filter-search {
     width: 95vw;
+  }
+
+  .card-content {
+    padding: 0.5rem;
+  }
+
+  .filter-search {
+    width: 95vw;
+  }
+
+  .crypto-card-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .percent-change {
+    display: flex;
+    grid-column: 1 / 3;
   }
 }
 

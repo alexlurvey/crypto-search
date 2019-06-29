@@ -15,7 +15,7 @@ const AppBase = (props) => {
     <section className="section app-wrapper">
       <div className="container">
         <h1 className="title">
-          Search Top Cryptocurrencies
+          Search Cryptocurrencies
         </h1>
         <Filters
           search={props.search}
