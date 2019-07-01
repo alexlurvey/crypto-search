@@ -8,6 +8,7 @@ yarn install
 yarn build
 yarn start
 ```
+Navigate to http://localhost:3000
 
 To run in development mode with file watching use `yarn dev`
 
