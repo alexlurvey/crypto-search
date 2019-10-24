@@ -3,6 +3,7 @@
 Search amongst the top 200 cryptocurrencies.
 
 ## Running the application
+Note: to get usable data paste your CoinMarketCap API key into the [constants](./repositories/constants.js) files.
 ```
 yarn install
 yarn build
