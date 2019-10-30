@@ -1,7 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import '../node_modules/spinkit/css/spinners/2-double-bounce.css';
 import './styles.css';
-import App from './components/App.jsx';
+import { renderOnce } from '@thi.ng/hdom';
 
-ReactDOM.render(<App />, document.getElementById('root')) 
+const removeAppPicker = () => {
+    document.getElementById('app-picker').innerHTML = '';
+}
+const reactHandler = async () => {
+    await import('./react-components');
+    removeAppPicker();
+}
+const hdomHandler = async () => {
+    await import('./hdom-components');
+    removeAppPicker();
+}
+
+const appPicker = () => {
+    return {
+        render: () => {
+            return ['div.app-picker-wrapper',
+                ['h1.app-picker-header', 'Use React or hdom?'],
+                ['div.apps',
+                    ['div.app-box', { onclick: reactHandler }, 'React'],
+                    ['div.app-box', { onclick: hdomHandler }, 'hdom']],
+            ];
+        }
+    }
+};
+
+renderOnce([appPicker()], { root: document.getElementById('app-picker')});

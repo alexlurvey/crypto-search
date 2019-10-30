@@ -712,6 +712,56 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@thi.ng/api@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@thi.ng/api/-/api-6.4.0.tgz#a72d45baac330cb509d03bf345f662210c3b835c"
+  integrity sha512-M7NGkZpn6Clf4AFiXxXyhovXgUtRxu0fxk+JL7+bI/rmRlffEQyMCq2FV2A/ydoExrfXB7ojEJPjKGZehfi/zw==
+  dependencies:
+    "@thi.ng/errors" "^1.2.0"
+
+"@thi.ng/checks@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@thi.ng/checks/-/checks-2.4.0.tgz#b0e0bce0c91182fcb82356fdc2ffd5c89725f679"
+  integrity sha512-ayh4oxeyujbNX0qTZyEHQap6P2FBw+bR89ynqFkrP2TcmaYaHMcfSV625iLD+OH0F/3MYOw3PYINudIJ62XqLg==
+
+"@thi.ng/diff@^3.2.4":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@thi.ng/diff/-/diff-3.2.4.tgz#70c70ea34bb1cfaa49a5ab7546eab0481040956e"
+  integrity sha512-FfdyKenGc4ShdyRAEy9S0dyctRcyBGWaVx/6fA2B/I2wtWR91g2Vxny2Cq+1U9bVKCzuFtMZGnOlUyvbEAI2Ew==
+  dependencies:
+    "@thi.ng/api" "^6.4.0"
+    "@thi.ng/equiv" "^1.0.9"
+
+"@thi.ng/equiv@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@thi.ng/equiv/-/equiv-1.0.9.tgz#fe10eece18cae5b05dd2de131094541bf679f8f4"
+  integrity sha512-xRXzBbCt2fjGR1Vrh1FcY2pcl4JAbuE+a33F8KZIgdUBRmDWIRBT7nDjRf7ihpWts4xVopS4kdRHMeLL+jzN4A==
+
+"@thi.ng/errors@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@thi.ng/errors/-/errors-1.2.0.tgz#75f05f24c9b19ace77c5d4cf7f6da4c5d90c0ffd"
+  integrity sha512-v+kWa1VbbKPEBaN4VAGMdv8ZHiuF1VIR8zPPWvpvZ/adDPv3FI1jyzmikGYQlPtT6ZagQdGnzapsPAoAU2xgAg==
+
+"@thi.ng/hdom@^9.0.0-alpha1":
+  version "9.0.0-alpha1"
+  resolved "https://registry.yarnpkg.com/@thi.ng/hdom/-/hdom-9.0.0-alpha1.tgz#e0de8fd7ee4d2a2587c79e90c68186ee4ecd2027"
+  integrity sha512-PU2y63ZIHuKj6LNIGI35QXO1pRfmfDcYgrrLOU7vTmfxjBz3yAlBZCV72ZTMMzt/lc3dZ7r/lZa0GyiYiV/URg==
+  dependencies:
+    "@thi.ng/api" "^6.4.0"
+    "@thi.ng/checks" "^2.4.0"
+    "@thi.ng/diff" "^3.2.4"
+    "@thi.ng/equiv" "^1.0.9"
+    "@thi.ng/errors" "^1.2.0"
+    "@thi.ng/hiccup" "^3.2.5"
+
+"@thi.ng/hiccup@^3.2.5":
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/@thi.ng/hiccup/-/hiccup-3.2.5.tgz#8e21d9aabdb7b8ad4385aef6eba54df3bd07790e"
+  integrity sha512-bwOcw3oIRaqJxr1B9sQiUw0tlk2EmJLMHKbPR25pDnHvcI+vlKf9dzzcb4rRspuYQOrTaifkyJpnBBWcPRUafQ==
+  dependencies:
+    "@thi.ng/checks" "^2.4.0"
+    "@thi.ng/errors" "^1.2.0"
+
 "@types/estree@0.0.39":
   version "0.0.39"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
