@@ -719,6 +719,17 @@
   dependencies:
     "@thi.ng/errors" "^1.2.0"
 
+"@thi.ng/atom@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@thi.ng/atom/-/atom-3.1.0.tgz#72c63aa06cc6249925c436e13219e5072c8e6e6e"
+  integrity sha512-ZCqYCp0DsemUSKccKOgEbZlStg30U9Dm8x+bW92DbqSXMvLbGLn2Aw2DllcAu05zms8x5faMUMJxbQ1PzRbrCQ==
+  dependencies:
+    "@thi.ng/api" "^6.4.0"
+    "@thi.ng/checks" "^2.4.0"
+    "@thi.ng/equiv" "^1.0.9"
+    "@thi.ng/errors" "^1.2.0"
+    "@thi.ng/paths" "^2.1.5"
+
 "@thi.ng/checks@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@thi.ng/checks/-/checks-2.4.0.tgz#b0e0bce0c91182fcb82356fdc2ffd5c89725f679"
@@ -758,6 +769,25 @@
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/@thi.ng/hiccup/-/hiccup-3.2.5.tgz#8e21d9aabdb7b8ad4385aef6eba54df3bd07790e"
   integrity sha512-bwOcw3oIRaqJxr1B9sQiUw0tlk2EmJLMHKbPR25pDnHvcI+vlKf9dzzcb4rRspuYQOrTaifkyJpnBBWcPRUafQ==
+  dependencies:
+    "@thi.ng/checks" "^2.4.0"
+    "@thi.ng/errors" "^1.2.0"
+
+"@thi.ng/interceptors@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@thi.ng/interceptors/-/interceptors-2.2.1.tgz#cfd9ccd45a0e37af53fbc2d5b9413d3488a31479"
+  integrity sha512-P/7Ms9yZKkw7ez/WsSMYrVHr0/OXBz6MRoNGyodWL7H5DW143/iInQaUD/JbiLb5npbdgFYpahnBImBk7gLNXg==
+  dependencies:
+    "@thi.ng/api" "^6.4.0"
+    "@thi.ng/atom" "^3.1.0"
+    "@thi.ng/checks" "^2.4.0"
+    "@thi.ng/errors" "^1.2.0"
+    "@thi.ng/paths" "^2.1.5"
+
+"@thi.ng/paths@^2.1.5":
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@thi.ng/paths/-/paths-2.1.5.tgz#a09f00b0d56c1315a3bc2c8aaa2aac3321dd25ca"
+  integrity sha512-HgkoASmZiiJdzshjbmjFJh/YXxPbydelUeCsOEkawJ3PyZDH0L4Bo+aVdQnN0/TmWqn/WaHGvQlo5BJAYLLJ1w==
   dependencies:
     "@thi.ng/checks" "^2.4.0"
     "@thi.ng/errors" "^1.2.0"
