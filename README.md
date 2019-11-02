@@ -22,5 +22,10 @@ To run in development mode with file watching use `yarn dev`
 ## Technologies
 - Build tools: [Rollup](https://rollupjs.org/guide/en/), [babel](https://babeljs.io/), [PostCSS](https://postcss.org/)
 - Server: [Express](https://expressjs.com/)
-- Frontend: React & Redux
+- Frontend (2 different builds):
+  - React/Redux
+  - [@thi.ng/umbrella](https://github.com/thi-ng/umbrella) ecosystem
+    - [@thi.ng/hodm](https://github.com/thi-ng/umbrella/tree/master/packages/hdom)
+    - [@thi.ng/interceptors](https://github.com/thi-ng/umbrella/tree/master/packages/interceptors)
+    - [@thi.ng/atom](https://github.com/thi-ng/umbrella/tree/master/packages/atom)
 - CSS: [Bulma](https://bulma.io/)
