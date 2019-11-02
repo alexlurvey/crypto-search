@@ -3,7 +3,6 @@
 Search amongst the top 200 cryptocurrencies.
 
 ## Running the application
-Note: to get usable data paste your CoinMarketCap API key into the [constants](./repositories/constants.js) files.
 ```
 yarn install
 yarn build
@@ -11,7 +10,9 @@ yarn start
 ```
 Navigate to http://localhost:3000
 
-To run in development mode with file watching use `yarn dev`
+To run in development mode with file watching use `yarn dev`. This command will load fake data from a json file.
+
+If you have a CoinMarketCap API key and want to use current data, copy it into this [constants](./repositories/constants.js) file and run with `yarn dev:real`.
 
 ## Directory Structure
 
