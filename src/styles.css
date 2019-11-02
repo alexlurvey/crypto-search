@@ -170,3 +170,47 @@ body {
     transform: scale(1.0);
   }
 }
+
+/* app picker */
+.app-picker-wrapper {
+  margin: 0;
+  padding-top: 20vh;
+  text-align: center;
+}
+
+.app-picker-header {
+  font-size: 200%;
+}
+
+.apps {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  margin: auto;
+  max-width: 30vh;
+}
+
+.hdom-question-text {
+  grid-row: 2;
+  grid-column: 2;
+  text-align: right;
+  margin-right: 5px;
+}
+.hdom-question-text a {
+  color: white;
+}
+
+.app-box {
+  margin: 5px;
+  padding: 5em;
+  border: solid black 2px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.app-box:hover {
+  border: solid whitesmoke 2px;
+  background-color: whitesmoke;
+  opacity: 0.5;
+}

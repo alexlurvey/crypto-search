@@ -1,0 +1,1 @@
+export const FX_CRYPTOCURRENCIES = 'load-cryptocurrencies';

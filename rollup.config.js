@@ -7,13 +7,9 @@ import postcss from 'rollup-plugin-postcss';
 export default {
   input: 'src/index.js',
   output: {
-    file: 'public/bundle.js',
-    format: 'umd',
+    dir: 'public',
+    format: 'es',
     sourcemap: true,
-    globals: {
-      'react': 'React',
-      'react-dom': 'ReactDOM'
-    }
   },
   plugins: [
     resolve(),
@@ -24,12 +20,13 @@ export default {
     commonjs({
       include: 'node_modules/**',
       namedExports: {
-        'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer']
+        'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer'],
+        'node_modules/react/index.js': [ 'useMemo', 'useEffect', 'useState', 'Fragment', 'useContext', 'useReducer', 'useLayoutEffect', 'useRef', 'useCallback' ],
+        'node_modules/react-dom/index.js': [ 'unstable_batchedUpdates' ],
       }
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify( 'development' )
     }),
   ],
-  external: [ 'react', 'react-dom' ]
 };
