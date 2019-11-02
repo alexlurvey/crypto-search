@@ -8,6 +8,7 @@ import {
     FX_DISPATCH_NOW,
     FX_DISPATCH_ASYNC
 } from '@thi.ng/interceptors';
+import * as tx from '@thi.ng/transducers';
 import { getAllCryptos } from '../api';
 import { filters } from './filters';
 import { cryptocard } from './cryptoCard';
@@ -41,13 +42,15 @@ const effects = {
     [fx.FX_CRYPTOCURRENCIES]: () => getAllCryptos().then(q => q.data)
 }
 
-// TODO: use @thi.ng/transducers
 const marketCap = (a, b) => b.quote.USD.market_cap - a.quote.USD.market_cap;
 const alphabetize = (a, b) => {
     if (a.name < b.name) return -1;
     if (a.name > b.name) return 1;
     return 0;
 };
+
+const cryptoCardXform = (search) =>
+    tx.filter(c => c.name.toLowerCase().indexOf(search.toLowerCase()) >= 0);
 
 const pageLoading = (loading) => [`div.spinner${loading ? '' : '.fade-out'}`,
     ['div.double-bounce1'],
@@ -72,17 +75,16 @@ class App {
 
     rootComponent () {
         const s = this.state.deref();
-        return ['section.section.app-wrapper', 
+        const filtered = tx.transduce(cryptoCardXform(s.search), tx.push(), s.cryptocurrencies.data);
+        const sorted = s.orderByMarketCap ? filtered.sort(marketCap) : filtered.sort(alphabetize);
+
+        return ['section.section.app-wrapper',
             ['div.container',
                 ['h1.title', 'Search CryptoCurrencies'],
                 filters(this.ctx, s.search, s.orderByMarketCap),
-                // TODO: use @thi.ng/transducers
                 s.cryptocurrencies.loading
                     ? pageLoading(s.cryptocurrencies.loading)
-                    : ['div.crypto-cards', ...s.cryptocurrencies.data
-                        .filter(c => c.name.toLowerCase().indexOf(s.search.toLowerCase()) >= 0)
-                        .sort(s.orderByMarketCap ? marketCap : alphabetize)
-                        .map(cryptocard)],
+                    : ['div.crypto-cards', ...sorted.map(cryptocard)]
             ]];
     }
 }
