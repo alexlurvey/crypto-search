@@ -183,8 +183,22 @@ body {
 }
 
 .apps {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
+  margin: auto;
+  max-width: 30vh;
+}
+
+.hdom-question-text {
+  grid-row: 2;
+  grid-column: 2;
+  text-align: right;
+  margin-right: 5px;
+}
+.hdom-question-text a {
+  color: white;
 }
 
 .app-box {

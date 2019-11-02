@@ -21,7 +21,10 @@ const appPicker = () => {
                 ['h1.app-picker-header', 'Use React or hdom?'],
                 ['div.apps',
                     ['div.app-box', { onclick: reactHandler }, 'React'],
-                    ['div.app-box', { onclick: hdomHandler }, 'hdom']],
+                    ['div.app-box', { onclick: hdomHandler }, 'hdom'],
+                    ['div.hdom-question-text',
+                       ['a', { href: 'https://github.com/thi-ng/umbrella/tree/master/packages/hdom', target: '_blank' }, 'hdom?']]
+                    ],
             ];
         }
     }
