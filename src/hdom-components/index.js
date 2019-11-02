@@ -11,7 +11,7 @@ import {
 import * as tx from '@thi.ng/transducers';
 import { getAllCryptos } from '../api';
 import { filters } from './filters';
-import { cryptocard } from './cryptoCard';
+import { cryptocard } from './crypto-card';
 import * as ev from './events';
 import * as fx from './effects';
 
