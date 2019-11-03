@@ -1,6 +1,6 @@
 // currently not used
 import { ACTIONS as CryptocurrencyActions } from './cryptocurrencies';
-import { CRYPTOCURRENCIES_STORAGE_KEY } from '../constants';
+import { CRYPTOCURRENCIES_STORAGE_KEY } from '../../constants';
 
 export const cryptocurrencyStorage = _store => next => action => {
   const result = next(action);

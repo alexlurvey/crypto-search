@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { getAllCryptos } from '../api';
+import { getAllCryptos } from '../../api';
 
 const domain_model = 'CRYPTOCURRENCIES';
 

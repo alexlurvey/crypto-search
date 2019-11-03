@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect, Provider } from 'react-redux';
-import { actionCreators as cryptoActionCreators, sortedCryptocurrencies } from '../store/cryptocurrencies';
-import { actionCreators as filterActionCreators } from '../store/filters';
-import { store } from '../store';
+import { actionCreators as cryptoActionCreators, sortedCryptocurrencies } from './store/cryptocurrencies';
+import { actionCreators as filterActionCreators } from './store/filters';
+import { store } from './store';
 import { CryptoCard } from './CryptoCard.jsx';
 import { Filters } from './Filters.jsx';
 
