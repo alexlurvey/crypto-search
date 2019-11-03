@@ -1,6 +1,5 @@
 import { createSelector } from 'reselect';
 import { getAllCryptos } from '../api';
-import { CRYPTOCURRENCIES_STORAGE_KEY } from '../constants';
 
 const domain_model = 'CRYPTOCURRENCIES';
 
@@ -19,16 +18,11 @@ export const actionCreators = {
   getCryptocurrencies: () => {
     return async dispatch => {
       dispatch({ type: ACTIONS.GET });
-      // const cache = localStorage.getItem(CRYPTOCURRENCIES_STORAGE_KEY);
-      // if (cache) {
-      //   dispatch({ type: ACTIONS.SET, payload: JSON.parse(cache) });
-      // } else {
-        const cryptos = await getAllCryptos();
-        if (cryptos.error) {
-          dispatch({ type: ACTIONS.ERROR });
-        }
-        dispatch({ type: ACTIONS.SET, payload: cryptos.data });
-      // }
+      const cryptos = await getAllCryptos();
+      if (cryptos.error) {
+        dispatch({ type: ACTIONS.ERROR });
+      }
+      dispatch({ type: ACTIONS.SET, payload: cryptos.data });
     }
   },
   setCryptocurrencies: (payload) => {

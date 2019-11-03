@@ -1,3 +1,4 @@
+// currently not used
 import { ACTIONS as CryptocurrencyActions } from './cryptocurrencies';
 import { CRYPTOCURRENCIES_STORAGE_KEY } from '../constants';
 
