@@ -1,4 +1,4 @@
-import * as ev from './events';
+import * as ev from '../hdom-atom-app/events';
 
 export const filters = (ctx, search, orderByMarketCap) => {
     const handleChange = (event) => {

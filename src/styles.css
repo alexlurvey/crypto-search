@@ -185,7 +185,7 @@ body {
 .apps {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   margin: auto;
   max-width: 30vh;

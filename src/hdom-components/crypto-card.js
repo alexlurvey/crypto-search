@@ -1,6 +1,6 @@
 import { formatPrice } from '../utils';
 
-export const cryptocard = (crypto) => {
+export const cryptoCard = (crypto) => {
     const { price, market_cap, percent_change_24h } = crypto.quote.USD;
     const isPositivePercentChange = percent_change_24h > 0;
     const hasPercentChange = percent_change_24h !== 0;
