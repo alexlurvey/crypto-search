@@ -14,7 +14,15 @@ class App {
     constructor (config) {
         this.config = config;
         this.state = new Atom(initialState);
-        this.ctx = { bus: new EventBus(this.state, events, effects) };
+        
+        const bus = new EventBus(this.state, events, effects);
+
+        this.ctx = {
+            bus,
+            onSearch: event => bus.dispatchNow([ev.EV_UPDATE_SEARCH, event.target.value]),
+            onToggleMarketCap: _event => bus.dispatchNow([ev.EV_TOGGLE_MARKET_CAP]),
+        };
+
         this.ctx.bus.instrumentWith([trace]);
     }
 

@@ -847,6 +847,14 @@
     "@thi.ng/api" "^6.4.0"
     "@thi.ng/equiv" "^1.0.9"
 
+"@thi.ng/diff@^3.2.5":
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/@thi.ng/diff/-/diff-3.2.5.tgz#8d96cd844196e2cbde26597c450e1f4a577268fd"
+  integrity sha512-+J+hKSGgntHbKHyKMEk4f/X1daWx/f5fmZJxJN4ZEIPrT+MoYOReE5FMbInOyp9I6/3yy/yzzD9Sfiy0+uxCUQ==
+  dependencies:
+    "@thi.ng/api" "^6.5.0"
+    "@thi.ng/equiv" "^1.0.10"
+
 "@thi.ng/equiv@^1.0.10":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@thi.ng/equiv/-/equiv-1.0.10.tgz#8f3015cb76ba916232f7865cc9a43108ea288d8e"
@@ -867,6 +875,18 @@
   resolved "https://registry.yarnpkg.com/@thi.ng/errors/-/errors-1.2.1.tgz#b0535df231922a0302a688e24505a4bb1877111f"
   integrity sha512-vDt8zEN1L2fuL1HQUKS+fbZnKLLLSx/qAL9GEMsZzCg2IFoqNqxhFVQ491nQkKEMTIP5hRox8LUsXNZDxCsuwQ==
 
+"@thi.ng/hdom@^8.0.7":
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/@thi.ng/hdom/-/hdom-8.0.7.tgz#ea00bfa25160ea740807cab7f99928412baa5273"
+  integrity sha512-4D1amiUVlT6uNvXVRc0UxzBo+SZO7aq6nI1nNPWzv/ACaTt6yu0zBS+euT+wv+e3POeWz1FsBB17sYy7JmVwYg==
+  dependencies:
+    "@thi.ng/api" "^6.5.0"
+    "@thi.ng/checks" "^2.4.1"
+    "@thi.ng/diff" "^3.2.5"
+    "@thi.ng/equiv" "^1.0.10"
+    "@thi.ng/errors" "^1.2.1"
+    "@thi.ng/hiccup" "^3.2.6"
+
 "@thi.ng/hdom@^9.0.0-alpha1":
   version "9.0.0-alpha1"
   resolved "https://registry.yarnpkg.com/@thi.ng/hdom/-/hdom-9.0.0-alpha1.tgz#e0de8fd7ee4d2a2587c79e90c68186ee4ecd2027"
@@ -886,6 +906,14 @@
   dependencies:
     "@thi.ng/checks" "^2.4.0"
     "@thi.ng/errors" "^1.2.0"
+
+"@thi.ng/hiccup@^3.2.6":
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/@thi.ng/hiccup/-/hiccup-3.2.6.tgz#128428bee69f3297187d444b5d21f941a8630230"
+  integrity sha512-Vrf4DFYzp2tT+atKp0YIqCzIOIkBx6S7TatHf2SSCJ/bWaFq7OSkrIXL1TAhrfs7b7K8jpMQxCFGoWOGeS9+yg==
+  dependencies:
+    "@thi.ng/checks" "^2.4.1"
+    "@thi.ng/errors" "^1.2.1"
 
 "@thi.ng/interceptors@^2.2.1":
   version "2.2.1"
@@ -975,6 +1003,15 @@
   dependencies:
     "@thi.ng/errors" "^1.2.1"
     "@thi.ng/memoize" "^1.1.5"
+
+"@thi.ng/transducers-hdom@^2.0.31":
+  version "2.0.31"
+  resolved "https://registry.yarnpkg.com/@thi.ng/transducers-hdom/-/transducers-hdom-2.0.31.tgz#d4cb178ffcb1b73b3f7776ffa6b392820ba7f3b5"
+  integrity sha512-9nJNjhHmOSZhnSj7GNzimk0/jVqBkkfwdhV3u3ec/PwZD6EZBA3dtTsCCANWYuY6XyGTUAe2StIatReyka2fsg==
+  dependencies:
+    "@thi.ng/hdom" "^8.0.7"
+    "@thi.ng/hiccup" "^3.2.6"
+    "@thi.ng/transducers" "^6.0.0"
 
 "@thi.ng/transducers@^5.4.5":
   version "5.4.5"

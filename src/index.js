@@ -21,9 +21,9 @@ const rstreamAppHandler = async () => {
 
 const appPicker = () => {
     return ['div.app-picker-wrapper',
-        ['h1.app-picker-header', 'Use React or hdom?'],
+        ['h1.app-picker-header', 'Pick an implementation'],
         ['div.apps',
-            ['div.app-box', { onclick: reactAppHandler }, 'React'],
+            ['div.app-box', { onclick: reactAppHandler }, 'React & Redux'],
             ['div.app-box', { onclick: atomAppHandler }, 'hdom & atom'],
             ['div.app-box', { onclick: rstreamAppHandler }, 'hdom & rstream'],
             ['div.hdom-question-text',
