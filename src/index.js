@@ -26,8 +26,8 @@ const appPicker = () => {
             ['div.app-box', { onclick: reactAppHandler }, 'React & Redux'],
             ['div.app-box', { onclick: atomAppHandler }, 'hdom & atom'],
             ['div.app-box', { onclick: rstreamAppHandler }, 'hdom & rstream'],
-            ['div.hdom-question-text',
-                ['a', { href: 'https://github.com/thi-ng/umbrella/tree/master/packages/hdom', target: '_blank' }, 'hdom?']]
+            ['div.umbrella-link',
+                ['a', { href: 'https://github.com/thi-ng/umbrella', target: '_blank' }, '@thi.ng/umbrella']]
             ]
     ];
 }
