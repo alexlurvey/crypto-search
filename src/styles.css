@@ -184,20 +184,19 @@ body {
 
 .apps {
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 90% 10%;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   margin: auto;
   max-width: 30vh;
 }
 
-.hdom-question-text {
+.umbrella-link {
   grid-row: 2;
-  grid-column: 2;
-  text-align: right;
-  margin-right: 5px;
+  grid-column: 2 / 4;
+  text-align: center;
 }
-.hdom-question-text a {
+.umbrella-link a {
   color: white;
 }
 

@@ -5,24 +5,30 @@ import { renderOnce } from '@thi.ng/hdom';
 const removeAppPicker = () => {
     document.getElementById('app-picker').innerHTML = '';
 }
-const reactHandler = async () => {
-    await import('./react-components');
+const reactAppHandler = async () => {
+    await import('./react-app');
     removeAppPicker();
 }
-const hdomHandler = async () => {
-    await import('./hdom-components');
+const atomAppHandler = async () => {
+    await import('./hdom-atom-app');
+    removeAppPicker();
+}
+const rstreamAppHandler = async () => {
+    await import('./hdom-rstream-app');
     removeAppPicker();
 }
 
+
 const appPicker = () => {
     return ['div.app-picker-wrapper',
-        ['h1.app-picker-header', 'Use React or hdom?'],
+        ['h1.app-picker-header', 'Pick an implementation'],
         ['div.apps',
-            ['div.app-box', { onclick: reactHandler }, 'React'],
-            ['div.app-box', { onclick: hdomHandler }, 'hdom'],
-            ['div.hdom-question-text',
-                ['a', { href: 'https://github.com/thi-ng/umbrella/tree/master/packages/hdom', target: '_blank' }, 'hdom?']]
-            ],
+            ['div.app-box', { onclick: reactAppHandler }, 'React & Redux'],
+            ['div.app-box', { onclick: atomAppHandler }, 'hdom & atom'],
+            ['div.app-box', { onclick: rstreamAppHandler }, 'hdom & rstream'],
+            ['div.umbrella-link',
+                ['a', { href: 'https://github.com/thi-ng/umbrella', target: '_blank' }, '@thi.ng/umbrella']]
+            ]
     ];
 }
 
