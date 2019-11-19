@@ -23,10 +23,13 @@ If you have a CoinMarketCap API key and want to use current data, copy it into t
 ## Technologies
 - Build tools: [Rollup](https://rollupjs.org/guide/en/), [babel](https://babeljs.io/), [PostCSS](https://postcss.org/)
 - Server: [Express](https://expressjs.com/)
-- Frontend (2 different builds):
+- Frontend (3 different builds):
   - React/Redux
-  - [@thi.ng/umbrella](https://github.com/thi-ng/umbrella) ecosystem
+  - atom & interceptors
     - [@thi.ng/hodm](https://github.com/thi-ng/umbrella/tree/master/packages/hdom)
     - [@thi.ng/interceptors](https://github.com/thi-ng/umbrella/tree/master/packages/interceptors)
     - [@thi.ng/atom](https://github.com/thi-ng/umbrella/tree/master/packages/atom)
+  - rstream
+    - [@thi.ng/hdom](https://github.com/thi-ng/umbrella/tree/master/packages/hdom)
+    - [@thi.ng/rstream](https://github.com/thi-ng/umbrella/tree/master/packages/rstream)
 - CSS: [Bulma](https://bulma.io/)
