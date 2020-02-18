@@ -8,5 +8,5 @@ app.get('/api/cryptocurrencies', async (req, res) => {
   res.send(cryptocurrencies);
 });
 
-app.use(express.static('.'));
+app.use(express.static('public'));
 app.listen(3000);
