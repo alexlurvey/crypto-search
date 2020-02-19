@@ -4,7 +4,10 @@ import replace from 'rollup-plugin-replace';
 import babel from 'rollup-plugin-babel';
 import postcss from 'rollup-plugin-postcss';
 
-export default {
+const env = process.env.NODE_ENV || 'development';
+const isProduction = env === 'production';
+
+export default (async () => ({
   input: 'src/index.js',
   output: {
     dir: 'public',
@@ -26,7 +29,8 @@ export default {
       }
     }),
     replace({
-      'process.env.NODE_ENV': JSON.stringify( process.env.NODE_ENV || 'development' )
+      'process.env.NODE_ENV': JSON.stringify( env )
     }),
+    isProduction && (await import('rollup-plugin-terser')).terser()
   ],
-};
+}))();
