@@ -7,6 +7,8 @@ import { root } from '../hdom-components';
 import { initialState, events, effects } from './atom';
 import { alphabetize, marketCap } from '../utils/cryptocurrencies/sorts';
 
+let stopApp;
+
 const cryptoCardXform = (search) =>
     tx.filter(c => c.name.toLowerCase().indexOf(search.toLowerCase()) >= 0);
 
@@ -27,11 +29,11 @@ class App {
     }
 
     start () {
-        start(() => {
+        return start(() => {
             if (this.ctx.bus.processQueue()) {
                 return this.rootComponent();
             }
-        }, { root: document.getElementById('root'), ctx: this.ctx })
+        }, { root: document.getElementById('hdom-atom-app'), ctx: this.ctx })
     }
 
     rootComponent () {
@@ -42,6 +44,13 @@ class App {
     }
 }
 
-const app = new App();
-app.ctx.bus.dispatch([ev.EV_GET_CRYPTOCURRENCIES]);
-app.start();
+export const startApp = () => {
+    const app = new App();
+    app.ctx.bus.dispatch([ev.EV_GET_CRYPTOCURRENCIES]);
+    stopApp = app.start();
+}
+
+export const unmountApp = () => {
+    (stopApp && stopApp())
+    stopApp = undefined;
+}
