@@ -4,7 +4,7 @@ import { pageLoading } from './page-loading';
 
 export const root = (ctx, dataLoading, cryptocurrencies, search, orderByMarketCap) => {
     return ['section.section.app-wrapper',
-            ['div.container',
+            ['div.container.box',
                 ['h1.title', 'Search Cryptocurrencies'],
                 filters(ctx, search, orderByMarketCap),
                 dataLoading

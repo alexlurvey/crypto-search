@@ -13,7 +13,7 @@ const AppBase = (props) => {
 
   return (
     <section className="section app-wrapper">
-      <div className="container">
+      <div className="container box">
         <h1 className="title">
           Search Cryptocurrencies
         </h1>

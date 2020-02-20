@@ -1,16 +1,20 @@
 body {
   height: 100vh;
   width: 100vw;
-  background-color: slategrey;
 }
 
 #root {
-  background-color: slategrey;
+  background-color: #707F90;
+  min-height: 100vh;
 }
 
 .app-wrapper {
   margin: auto;
   width: 80vw;
+}
+.app-wrapper > div {
+  padding: 2em;
+  background-color: #E3E6E9;
 }
 
 /* Filters */
@@ -212,4 +216,16 @@ body {
   border: solid whitesmoke 2px;
   background-color: whitesmoke;
   opacity: 0.5;
+}
+
+@media (max-width: 769px) {
+  .app-box {
+    padding: 3em;
+  }
+}
+
+@media (max-width: 376px) {
+  .app-box {
+    padding: 2em;
+  }
 }
