@@ -1,7 +1,7 @@
 # Crypto Search
 
 Search amongst the top 200 cryptocurrencies.
-## Demo: https://crypto-search.now.sh/
+#### Demo: https://crypto-search.now.sh/
 
 ## Running the application
 ```
