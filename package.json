@@ -4,10 +4,10 @@
   "description": "search amongs the top 200 cryptocurrencies",
   "main": "index.js",
   "scripts": {
-    "build": "npm run copyfiles && rollup -c --environment NODE_ENV:production",
+    "build": "npm run copyfiles && rollup -c --environment USE_REAL_COINMARKETCAP_DATA:true,NODE_ENV:production",
     "copyfiles": "copyfiles -f index.html node_modules/bulma/css/bulma.min.css public",
-    "dev": "concurrently 'npm run copyfiles' 'rollup -cw' 'node server.js'",
-    "dev:real": "concurrently 'npm run copyfiles' 'rollup -cw' 'cross-env USE_REAL_COINMARKETCAP_DATA=true node server'",
+    "dev": "npm run copyfiles && rollup -cw",
+    "dev:local": "concurrently 'npm run copyfiles' 'rollup -cw' 'node server'",
     "start": "node server.js"
   },
   "author": "",
@@ -42,7 +42,6 @@
     "autoprefixer": "^9.6.0",
     "concurrently": "^4.1.0",
     "copyfiles": "^2.2.0",
-    "cross-env": "^6.0.3",
     "postcss": "^7.0.17",
     "rollup": "^1.16.1",
     "rollup-plugin-babel": "^4.3.2",
