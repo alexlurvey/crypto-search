@@ -3,3 +3,5 @@ public
 .env
 .DS_Store
 **/.DS_Store
+
+.now
