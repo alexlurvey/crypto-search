@@ -5,14 +5,24 @@ import { config } from './router';
 import { stream, sync } from '@thi.ng/rstream';
 import { updateDOM } from '@thi.ng/transducers-hdom';
 import * as tx from '@thi.ng/transducers';
+import ReactIcon from '../assets/React-icon.svg';
+import { pageLoading } from './hdom-components';
 
 const reactAppBase = 'div#react-app';
 const hdomAtomBase = 'div#hdom-atom-app';
 const hdomRstreamBase = 'div#hdom-rstream-app';
+const reactRoute = '/react';
+const atomRoute = '/hdom-atom';
+const rstreamRoute = '/hdom-rstream';
 
 const appStream = stream()
+const routeStream = stream()
 const router = new HTMLRouter(config)
 router.start()
+
+routeStream.subscribe(tx.sideEffect((route) => {
+    router.route(route, true);
+}))
 
 let reactModule;
 let hdomAtomModule;
@@ -32,46 +42,73 @@ const startApp = (mod, baseDiv) => {
 }
 
 window.addEventListener('hashchange', ({ oldURL, newURL }) => {
-    if (oldURL.indexOf('react') > -1)
+    if (oldURL.indexOf(reactRoute) > -1)
         (reactModule && reactModule.unmountApp())
-    else if (oldURL.indexOf('hdom-atom') > -1)
+    else if (oldURL.indexOf(atomRoute) > -1)
         (hdomAtomModule && hdomAtomModule.unmountApp())
-    else if (oldURL.indexOf('hdom-rstream') > -1)
+    else if (oldURL.indexOf(rstreamRoute) > -1)
         (hdomRstreamModule && hdomRstreamModule.unmountApp())
 
     resetApp()
-    if (newURL.indexOf('react') > -1) {
-        router.route('/react', true);
+    if (newURL.indexOf(reactRoute) > -1) {
+        routeStream.next(reactRoute)
         startApp(reactModule, reactAppBase);
-    } else if (newURL.indexOf('hdom-atom') > -1) {
-        router.route('/hdom-atom', true);
+    } else if (newURL.indexOf(atomRoute) > -1) {
+        routeStream.next(atomRoute)
         startApp(hdomAtomModule, hdomAtomBase);
-    } else if (newURL.indexOf('hdom-rstream') > -1) {
-        router.route('/hdom-rstream', true);
+    } else if (newURL.indexOf(rstreamRoute) > -1) {
+        routeStream.next(rstreamRoute)
         startApp(hdomRstreamModule, hdomRstreamBase);
     } else {
-        router.route('/home', true);
+        routeStream.next('/home')
         appStream.next(appPicker);
     }
 })
 
 const reactAppHandler = async () => {
-    router.route('/react', true);
+    routeStream.next(reactRoute)
+    if (!reactModule) {
+        appStream.next(reactLoader)
+        reactModule = await import('./react-app');
+    } 
     appStream.next('div#react-app');
-    reactModule = await import('./react-app');
     reactModule.startApp();
 }
 const atomAppHandler = async () => {
-    router.route('/hdom-atom', true);
+    routeStream.next(atomRoute)
+
+    if (!hdomAtomModule) {
+        appStream.next('div')
+        appStream.next(thingLoader)
+        hdomAtomModule = await import('./hdom-atom-app');
+    }
+
     appStream.next('div#hdom-atom-app');
-    hdomAtomModule = await import('./hdom-atom-app');
     hdomAtomModule.startApp();
 }
 const rstreamAppHandler = async () => {
-    router.route('/hdom-rstream', true);
+    routeStream.next(rstreamRoute)
+
+    if (!hdomRstreamModule) {
+        appStream.next('div')
+        appStream.next(thingLoader)
+        hdomRstreamModule = await import('./hdom-rstream-app');
+    }
+
     appStream.next('div#hdom-rstream-app');
-    hdomRstreamModule = await import('./hdom-rstream-app');
     hdomRstreamModule.startApp();
+}
+
+const reactLoader = () => {
+    return ['div.app-loading-wrapper', [
+        ['img.rotate', { src: ReactIcon }]
+    ]]
+}
+
+const thingLoader = () => {
+    return ['div.app-loading-wrapper', [
+        pageLoading
+    ]];
 }
 
 const appPicker = () => {    
@@ -96,4 +133,5 @@ sync({
     )
 })
 
+routeStream.next('/home')
 appStream.next(appPicker)
