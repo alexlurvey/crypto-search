@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 245 140">
+    <defs>
+        <!-- t -->
+        <clipPath id="t1">
+            <rect x="-15" y="20" width="30" height="20">
+                <animate attributeName="x" begin="800ms" dur="200ms" fill="freeze" repeatCount="0" values="-15;15" />
+            </rect>
+        </clipPath>
+        <clipPath id="t2">
+            <rect x="40" y="-100" width="20" height="100">
+                <animate attributeName="y" begin="300ms" dur="500ms" fill="freeze" repeatCount="0" values="-100;0" />
+            </rect>
+        </clipPath>
+
+        <!-- h -->
+        <clipPath id="h1">
+            <rect x="65" y="-100" width="20" height="100">
+                <animate attributeName="y" begin="450ms" dur="500ms" fill="freeze" repeatCount="0" values="-100;0" />
+            </rect>
+        </clipPath>
+        <clipPath id="h2">
+            <rect x="65" y="40" width="15" height="20">
+                <animate attributeName="x" begin="900ms" dur="200ms" fill="freeze" repeatCount="0" values="65;80" />
+            </rect>
+        </clipPath>
+        <clipPath id="h3">
+            <rect x="90" y="100" width="20" height="100">
+                <animate attributeName="y" begin="600ms" dur="500ms" fill="freeze" repeatCount="0" values="100;40" />
+            </rect>
+        </clipPath>
+
+        <!-- i -->
+        <clipPath id="i1">
+            <rect x="115" y="100" width="20" height="100">
+                <animate attributeName="y" begin="750ms" dur="500ms" fill="freeze" repeatCount="0" values="100;40" />
+            </rect>
+        </clipPath>
+
+        <!-- n -->
+        <clipPath id="n1">
+            <rect x="164" y="100" width="20" height="100">
+                <animate attributeName="y" begin="1050ms" dur="500ms" fill="freeze" repeatCount="0" values="100;40" />
+            </rect>
+        </clipPath>
+        <clipPath id="n2">
+            <rect x="164" y="40" width="15" height="20">
+                <animate attributeName="x" begin="1500ms" dur="200ms" fill="freeze" repeatCount="0" values="164;179" />
+            </rect>
+        </clipPath>
+        <clipPath id="n3">
+            <rect x="189" y="100" width="20" height="100">
+                <animate attributeName="y" begin="1200ms" dur="500ms" fill="freeze" repeatCount="0" values="100;40" />
+            </rect>
+        </clipPath>
+
+        <!-- g -->
+        <clipPath id="g1">
+            <rect x="214" y="100" width="20" height="100">
+                <animate attributeName="y" begin="1350ms" dur="500ms" fill="freeze" repeatCount="0" values="100;40" />
+            </rect>
+        </clipPath>
+        <clipPath id="g2">
+            <rect x="239" y="-60" width="20" height="100">
+                <animate attributeName="y" begin="1600ms" dur="500ms" fill="freeze" repeatCount="0" values="-60;40" />
+            </rect>
+        </clipPath>
+        <clipPath id="g3">
+            <rect x="244" y="40" width="30" height="20">
+                <animate attributeName="x" begin="1800ms" dur="200ms" fill="freeze" repeatCount="0" values="244;214" />
+            </rect>
+        </clipPath>
+        <clipPath id="g4">
+            <rect x="244" y="80" width="30" height="20">
+                <animate attributeName="x" begin="1800ms" dur="200ms" fill="freeze" repeatCount="0" values="244;214" />
+            </rect>
+        </clipPath>
+        <clipPath id="g5">
+            <rect x="244" y="120" width="30" height="20">
+                <animate attributeName="x" begin="1800ms" dur="200ms" fill="freeze" repeatCount="0" values="244;214" />
+            </rect>
+        </clipPath>
+    </defs>
+    <g style="fill:white; stroke:none" transform="skewX(-21)">
+        <!-- t -->
+        <rect x="15" y="20" width="30" height="40" clip-path="url(#t1)"/>
+        <rect x="40" y="0" width="20" height="100" clip-path="url(#t2)"/>
+
+        <!-- h -->
+        <rect x="65" y="0" width="20" height="100" clip-path="url(#h1)"/>
+        <rect x="80" y="40" width="15" height="20" clip-path="url(#h2)"/>
+        <rect x="90" y="40" width="20" height="60" clip-path="url(#h3)"/>
+
+        <!-- i -->
+        <rect x="115" y="40" width="20" height="60" clip-path="url(#i1)"/>
+        <circle cx="115" cy="26" r="0" transform="skewX(21)">
+            <animate attributeName="r" begin="1200ms" dur="200ms" fill="freeze" repeatCount="0" values="0;10" />
+        </circle>
+
+        <!-- . -->
+        <circle cx="115" cy="90" r="0" transform="skewX(21)">
+            <animate attributeName="r" begin="900ms" dur="200ms" fill="freeze" repeatCount="0" values="0;10" />
+        </circle>
+        
+        <!-- n -->
+        <rect x="164" y="40" width="20" height="60" clip-path="url(#n1)"/>
+        <rect x="179" y="40" width="15" height="20" clip-path="url(#n2)"/>
+        <rect x="189" y="40" width="20" height="60" clip-path="url(#n3)"/>
+
+        <!-- g -->
+        <rect x="214" y="40" width="20" height="60" clip-path="url(#g1)"/>
+        <rect x="239" y="40" width="20" height="100" clip-path="url(#g2)"/>
+        <rect x="214" y="40" width="30" height="20" clip-path="url(#g3)"/>
+        <rect x="214" y="80" width="30" height="20" clip-path="url(#g4)"/>
+        <rect x="214" y="120" width="30" height="20" clip-path="url(#g5)"/>
+    </g>
+</svg>

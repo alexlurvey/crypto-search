@@ -6,7 +6,7 @@ import { stream, sync } from '@thi.ng/rstream';
 import { updateDOM } from '@thi.ng/transducers-hdom';
 import * as tx from '@thi.ng/transducers';
 import ReactIcon from '../assets/React-icon.svg';
-import { pageLoading } from './hdom-components';
+import ThingIcon from '../assets/thing-icon.svg';
 
 const reactAppBase = 'div#react-app';
 const hdomAtomBase = 'div#hdom-atom-app';
@@ -78,7 +78,6 @@ const atomAppHandler = async () => {
     routeStream.next(atomRoute)
 
     if (!hdomAtomModule) {
-        appStream.next('div')
         appStream.next(thingLoader)
         hdomAtomModule = await import('./hdom-atom-app');
     }
@@ -90,7 +89,6 @@ const rstreamAppHandler = async () => {
     routeStream.next(rstreamRoute)
 
     if (!hdomRstreamModule) {
-        appStream.next('div')
         appStream.next(thingLoader)
         hdomRstreamModule = await import('./hdom-rstream-app');
     }
@@ -107,8 +105,8 @@ const reactLoader = () => {
 
 const thingLoader = () => {
     return ['div.app-loading-wrapper', [
-        pageLoading
-    ]];
+        ['img', { src: ThingIcon }]
+    ]]
 }
 
 const appPicker = () => {    
