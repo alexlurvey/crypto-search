@@ -20,6 +20,19 @@ const getAll = async (limit = 200) => {
   }
 }
 
+const getBySymbol = async (symbol) => {
+  if (!symbol || !symbol.length)
+    return { error: true, message: 'Need a symbol' };
+  
+  try {
+    let response = await cmc_instance.get(`/cryptocurrency/quotes/latest?symbol=${symbol}`);
+    return response.data.data;
+  } catch (err) {
+    console.log(err)
+  }
+}
+
 module.exports = {
-  getAll
+  getAll,
+  getBySymbol,
 }
