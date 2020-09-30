@@ -1,7 +1,7 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import replace from 'rollup-plugin-replace';
-import babel from 'rollup-plugin-babel';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import replace from '@rollup/plugin-replace';
+import babel from '@rollup/plugin-babel';
 import postcss from 'rollup-plugin-postcss';
 import image from '@rollup/plugin-image';
 
@@ -15,21 +15,15 @@ export default (async () => ({
     format: 'es',
     sourcemap: true,
   },
+  preserveEntrySignatures: false,
   plugins: [
     resolve(),
-    babel({ runtimeHelpers: true }),
+    babel({ babelHelpers: 'runtime', skipPreflightCheck: true }),
     postcss({
       plugins: [ require('autoprefixer') ]
     }),
     image(),
-    commonjs({
-      include: 'node_modules/**',
-      namedExports: {
-        'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer'],
-        'node_modules/react/index.js': [ 'useMemo', 'useEffect', 'useState', 'Fragment', 'useContext', 'useReducer', 'useLayoutEffect', 'useRef', 'useCallback' ],
-        'node_modules/react-dom/index.js': [ 'unstable_batchedUpdates' ],
-      }
-    }),
+    commonjs({ include: 'node_modules/**' }),
     replace({
       'process.env.NODE_ENV': JSON.stringify( env )
     }),
