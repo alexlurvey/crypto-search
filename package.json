@@ -26,7 +26,7 @@
     "axios": "^0.21.1",
     "bulma": "^0.9.1",
     "custom-env": "^2.0.1",
-    "express": "^4.17.1",
+    "express": "^4.20.0",
     "nm-project-repositories": "./repositories/",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
