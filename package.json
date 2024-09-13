@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "search amongs the top 200 cryptocurrencies",
   "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "npm run copyfiles && rollup -c --environment USE_REAL_COINMARKETCAP_DATA:true,NODE_ENV:production",
     "copyfiles": "copyfiles -f index.html node_modules/bulma/css/bulma.min.css public",
